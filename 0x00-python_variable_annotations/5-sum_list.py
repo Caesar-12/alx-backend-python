@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Contains function sum_list"""
+#from typing import Sequence
 
 
 def sum_list(input_list: list[float]) -> float:
