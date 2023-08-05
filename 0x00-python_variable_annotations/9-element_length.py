@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """Contains annotated element_lengthfunction"""
 from typing import Sequence, Iterable, Tuple, List
 
