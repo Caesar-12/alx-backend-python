@@ -1,4 +1,4 @@
-#!/usr/bin env python3
+#!/usr/bin/env python3
 """Contains make_multiplier function"""
 from typing import Callable
 
