@@ -3,9 +3,13 @@
 from typing import Callable
 
 
-def multiply(num: float, mult: float=0.00) -> float:
+hold: float = 1.00
+def multiply(mult: float = 0.00) -> float:
     """multiplies a number by num"""
-    return (num * mult)
+    return (mult * hold)
 
 def make_multiplier(multiplier: float) -> Callable[[float], float]:
-    return multiply(multiplier)
+    """Returns a function"""
+    hold = multiplier
+    return multiply()
+
