@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """Contains make_multiplier function"""
 from typing import Callable
+import sys
 
 
-hold: float = 1.00
-def multiply(mult: float = 0.00) -> float:
+def multiply(mult: float) -> float:
     """multiplies a number by num"""
-    return (mult * hold)
+    return (mult * sys.argv[0])
+
 
 def make_multiplier(multiplier: float) -> Callable[[float], float]:
     """Returns a function"""
-    hold = multiplier
-    return multiply()
-
+    sys.argv[0] = multiplier
+    return multiply
