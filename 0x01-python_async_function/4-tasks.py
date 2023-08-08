@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Contains Async routine function"""
 import asyncio
+from typing import List
 
 
-async def task_wait_n(n, max_delay):
+async def task_wait_n(n: int, max_delay: int) -> List[float]:
     """Utilizes the wait_random function"""
     task_wait_random = __import__('3-tasks').task_wait_random
 
