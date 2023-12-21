@@ -1,18 +1,17 @@
 #!/usr/bin/env python3
-"""Contains Async routine function"""
+'''Task 4's module.
+'''
 import asyncio
 from typing import List
 
 
+task_wait_random = __import__('3-tasks').task_wait_random
+
+
 async def task_wait_n(n: int, max_delay: int) -> List[float]:
-    """Utilizes the wait_random function"""
-    task_wait_random = __import__('3-tasks').task_wait_random
-
-    wait_list = []
-    for i in range(n):
-        wait = task_wait_random(max_delay)
-        wait_time = await wait
-        # print(type(wait_time))
-        wait_list.append(wait_time)
-
-    return wait_list
+    '''Executes task_wait_random n times.
+    '''
+    wait_times = await asyncio.gather(
+        *tuple(map(lambda _: task_wait_random(max_delay), range(n)))
+    )
+    return sorted(wait_times)
